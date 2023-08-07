@@ -25,6 +25,6 @@ export class Contact {
   @CreateDateColumn()
   dateTime: Date;
 
-  @ManyToOne(() => User, (user) => user.Contact)
+  @ManyToOne(() => User, (user) => user.Contact, { onDelete: 'CASCADE' })
   user: User | null;
 }

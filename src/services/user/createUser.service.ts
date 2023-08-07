@@ -12,7 +12,5 @@ export const createUserService = async (
   const newData: User = repository.create(data);
   await repository.save(newData);
 
-  console.log(newData);
-
   return userResultSchema.parse(newData);
 };

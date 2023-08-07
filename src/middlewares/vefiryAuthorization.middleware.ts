@@ -21,6 +21,5 @@ export const verifyAuthorization = async (
       res.locals.userId = parseInt(decode.sub);
     }
   );
-
   next();
 };

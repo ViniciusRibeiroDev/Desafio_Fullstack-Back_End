@@ -14,7 +14,7 @@ export const retriveUserService = async (
     where: { id },
   });
 
-  if (!user) throw new AppError('Insufficient permission', 403);
+  if (!(await user)) throw new AppError('User not found', 404);
 
-  return userResultSchema.parse(user);
+  return userResultSchema.parse(await user);
 };
